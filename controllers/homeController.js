@@ -1,3 +1,7 @@
 module.exports.home= (req,res)=>{
-    res.send("HOme")
+    res.render('home', {
+        title: 'CSV Upload'
+    })
 }
+
+
