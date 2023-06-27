@@ -15,49 +15,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Custom Css -->
     <link rel="stylesheet" href="/assets/css/home.css">
+    <link rel="stylesheet" href="/assets/css/_header.css">
 </head>
 
 <body>
-    <div class="side-navbar">
-        <!-- Nav List -->
-        <ul class="nav-list">
-            <li class="nav-list-items">
-                <i class="bi bi-filetype-csv"></i>
-                My Files
-            </li>
-            <li class="nav-list-items">
-                <i class="bi bi-clock"></i>
-                Recent
-            </li>
-            <li class="nav-list-items">
-                <i class="bi bi-star"></i>
-                Favourite
-            </li>
-            <li class="nav-list-items">
-                <i class="bi bi-trash3"></i>
-                Trash
-            </li>
-            <li class="nav-list-items">
-                <i class="bi bi-gear"></i>
-                Settings
-            </li>
-        </ul>
-    </div>
-
-
     <div class="content">
-        <!-- Logo -->
-        <div class="content-header">
-            <div class="logo">
-                <Strong>CSV</Strong>
-                <span>Upload</span>
-            </div>
-
-            <!-- Upload Button -->
-            <button class="upload-files">Upload</button>
-        </div>
-
-
+        
+        <%- include('_header') %>
         <!-- Search Bar -->
         <div class="search-bar">
             <input type="text" class="search-input" placeholder="Type anything to Search">
@@ -115,52 +79,10 @@
     </div>
 
 
-    <div class="user-section">
-        <div class="account-details">
-            <img src="/assets/images/man (1).png" alt="" class="user-img">
-            <h3 class="user-name">Ashis Kumar Yadav</h3>
-        </div>
-
-        <div class="storage-container">
-            <h3>Storage</h3>
-            <div class="storage-bar">
-                <div class="used-storage">
-
-                </div>
-            </div>
-            <!-- Upgrade Plans -->
-
-            <div class="upgrade-storage">
-                <h3>Select Plans</h3>
-                <div class="plans">
-                    <div class="upgrade-plans">
-                        <h4>10GB</h4>
-
-                        <p>Free Plan</p>
-                    </div>
-                    <div class="upgrade-plans">
-                        <h4>100GB</h4>
-
-                        <p>Pro Plan</p>
-                    </div>
-                </div>
-                <div class="upgrade-pro">
-                    <div class="upgrade-btn">
-                        <img src="/assets/images/crown.png" alt="">
-                        Upgrade to Premium
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <a href="#" class="sign-out">
-            <i class="bi bi-box-arrow-left"></i>
-            Sign Out</a>
-
-    </div>
+    
 
     <script src="/assets/js/home.js"></script>
+    <script src="/assets/js/_header.js"></script>
 </body>
 
 </html>

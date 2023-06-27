@@ -3,50 +3,6 @@ const fs = require("fs");
 const path = require("path");
 const Upload = require("../models/upload");
 
-// module.exports.view = (req, res) => {
-//     const fileId = req.params.fileId;
-  
-//     Upload.findById(fileId)
-//       .then((file) => {
-//         if (!file) {
-//           return res.status(404).send("File not found");
-//         }
-  
-//         const filePath = path.join(__dirname, "../uploads", file.filename);
-  
-//         const results = [];
-//         fs.createReadStream(filePath)
-//           .pipe(csv())
-//           .on("data", (data) => {
-//             results.push(data);
-//           })
-//           .on("end", () => {
-//             if (results.length === 0) {
-//               // Handle the case when no data is found in the CSV file
-//               return res.status(404).send("No data found in the CSV file");
-//             }
-  
-//             const tableHeaders = Object.keys(results[0]);
-//             const tableRows = results;
-  
-//             res.render("csv", {
-//               title: "CSV Viewer",
-//               file,
-//               tableHeaders,
-//               tableRows,
-//             });
-//           })
-//           .on("error", (error) => {
-//             console.error("CSV parsing error:", error);
-//             res.status(500).send("Error parsing CSV file");
-//           });
-//       })
-//       .catch((error) => {
-//         console.error("File retrieval error:", error);
-//         res.status(500).send("Internal Server Error");
-//       });
-//   };
-
 module.exports.view = (req, res) => {
     const fileId = req.params.fileId;
     const searchQuery = req.query.q; // Get the search query from the URL query parameters
@@ -78,7 +34,7 @@ module.exports.view = (req, res) => {
               // Filter the tableRows based on the search query
               tableRows = tableRows.filter((row) => {
                 return Object.values(row).some((value) =>
-                  value.toLowerCase().includes(searchQuery.toLowerCase())
+                value.toLowerCase().includes(searchQuery.toLowerCase())
                 );
               });
             }

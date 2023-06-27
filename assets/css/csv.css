@@ -4,7 +4,8 @@
 }
 body{
     font-family: "Roboto", sans-serif;
-    padding: 10px;
+    padding: 0 10px;
+
 }
 h1{
     margin: 10px;
@@ -29,7 +30,6 @@ h1{
     align-items: center;
     justify-content: center;
     width: 60px;
-    background-color: rgb(230, 230, 230);
     cursor: pointer;
   }
 
@@ -42,4 +42,9 @@ h1{
   th,td{
     border: 1px solid grey;
     padding: 5px;
+  }
+
+  .highlight{
+    background-color: rgb(30, 105, 255);
+    color: white;
   }
