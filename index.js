@@ -1,6 +1,8 @@
 const express = require('express');
 const db = require('./config/mongoose');
 
+const env = require('dotenv').config();
+
 const path = require('path');
 const multer = require('multer')
 const app = express();
