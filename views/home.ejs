@@ -88,9 +88,29 @@
                 </div>
             </div>
             <!-- Files -->
-            <ul class="files">
-                <!-- Add Li Dynamically -->
-            </ul>
+            <table class="files">
+                <thead class="thead">
+                    <tr>
+                        <th>SL. No</th>
+                        <th class="header-1">File Name</th>
+                        <th>Size</th>
+                        <th>View</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let i=0; i< files.length; i++) { %>
+                        <% let sl= i+ 1 %>
+                        <tr>
+                            <td><%= sl %></td>
+                            <td><%= files[i].originalname %></td>
+                            <td><%= files[i].size %></td>
+                            <td><a href="/view/<%= files[i]._id %>">View</a></td>
+                            <td><a href="/delete/<%= files[i]._id %>">Delete</a></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
         </div>
     </div>
 

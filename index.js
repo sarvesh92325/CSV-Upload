@@ -1,16 +1,17 @@
 const express = require('express');
-const multer = require('multer');
+const db = require('./config/mongoose');
+
 const path = require('path');
-
+const multer = require('multer')
 const app = express();
-
+app.use(express.urlencoded({ extended: false }));
 const assetsPath = path.join(__dirname, 'assets');
 app.use('/assets', express.static(assetsPath));
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
-app.get('/', require('./routes'));
+app.use('/', require('./routes'));
 
 app.listen(8000, (err) => {
     if (err) {

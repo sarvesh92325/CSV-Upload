@@ -37,22 +37,25 @@ const handleDrop = (e) => {
 };
 
 // Uploading Files
-const uploadFile = (file) => {
+function uploadFile(file) {
   const formData = new FormData();
   formData.append("file", file);
 
-  fetch("/user/upload", {
+  fetch("/upload", {
     method: "POST",
     body: formData,
   })
-    .then((respons) => {
-      respons.text();
-    })
-    .then((data) => console.log(data))
-    .catch((error) => {
-      console.error(error);
-    });
-};
+  .then((response) => {
+    if (response.ok) {
+      window.location.href = '/';
+    } else {
+      console.error('File upload failed.');
+    }
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+}
 
 // Handle drop box clicks
 function handleUploadClick() {
