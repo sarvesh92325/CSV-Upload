@@ -4,8 +4,8 @@ const path = require("path");
 const Upload = require("../models/upload");
 
 module.exports.view = (req, res) => {
-    const fileId = req.params.fileId;
-    const searchQuery = req.query.q; // Get the search query from the URL query parameters
+  const fileId = req.params.fileId;
+  const searchQuery = req.query.q; // Get the search query from the URL query parameters
     
     Upload.findById(fileId)
       .then((file) => {
@@ -23,7 +23,6 @@ module.exports.view = (req, res) => {
           })
           .on("end", () => {
             if (results.length === 0) {
-              // Handle the case when no data is found in the CSV file
               return res.status(404).send("No data found in the CSV file");
             }
   

@@ -2,11 +2,13 @@
 const Upload = require("../models/upload");
 
 module.exports.home = (req, res) => {
+  const searchVal = req.query.s;
   Upload.find()
     .then((files) => {
       res.render("home", {
         title: "CSV Upload",
         files,
+        searchVal
       });
     })
     .catch((err) => {
